@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://www.w3cschool.cc/try/angularjs/1.2.5/angular.min.js"></script>
+    <script src="http://cdn.bootcss.com/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js"></script>
+    <title></title>
+</head>
+<body ng-app="myApp" style="background:#4A4A4A" class="row">
+<div style="color:#fff; font-size:30px; font-weight:bold; text-shadow:3px 3px 3px #ccc;-webkit-text-shadow:3px 3px 3px #ccc; text-align:center; margin-top:30px;">FE-演示平台</div>
+<section class="row">
+    <section ng-controller = "alertDemo" class="col-md-6" style="margin:50px auto; float:none">
+        <alert ng-repeat="alert in alerts " type="{{alert.type}}"
+               close="closeAlert($index)">{{alert.msg}}</alert>
+
+        <button class="btn btn-default" ng-click="addAlert()">添加弹窗</button>
+    </section>
+</section>
+</body>
+<script>
+    angular.module('myApp',['ui.bootstrap']).controller('alertDemo',function($scope){
+        $scope.alerts = [
+            {type : 'danger' ,msg : '警告，操作非常危险，确认操作？' },{type : 'success' , msg : '恭喜你，操作成功'}
+        ]
+        $scope.addAlert = function(){
+            var len = $scope.alerts.length+1
+            $scope.alerts.push({msg : '第' + len+'个alert'});
+        }
+        $scope.closeAlert = function(index){
+            $scope.alerts.splice(index,1)
+        }
+    })
+</script>
+</html>

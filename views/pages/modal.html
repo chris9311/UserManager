@@ -1,0 +1,75 @@
+<div>
+    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+        Launch demo modal
+    </button>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="false" >
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="panel panel-warning">
+                        <div class="panel-heading">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                    aria-hidden="true">&times;</span></button>
+                            <div class="panel-title">User Login</div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <form class="form-horizontal" role="form" ng-controller="LoginController"
+                                          name="userlogin" novalidate>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">
+                                                UsernName OR Email：
+                                            </label>
+
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="text"
+                                                       placeholder="this is your username or email"
+                                                       ng-model="user.username" required name="username">
+                                            </div>
+                                            <div class="col-md-3">
+                            <span style="color:red" ng-show="userlogin.username.$dirty && userlogin.username.$invalid">
+                                <span ng-show="userlogin.username.$error.required">Username is required.</span>
+                            </span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">
+                                                Password:
+                                            </label>
+
+                                            <div class="col-md-6">
+                                                <input class="form-control" type="password"
+                                                       placeholder="this is your password" ng-model="user.password"
+                                                       name="password" required>
+                                            </div>
+                                            <div class="col-md-3">
+                             <span style="color:red" ng-show="userlogin.password.$dirty && userlogin.password.$invalid">
+                                 <span ng-show="userlogin.password.$error.required">Password is required.</span>
+                             </span>
+                                                <span style="color:red" class="alert-danger" ng-bind="msg"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-md-offset-2 col-md-7">
+                                                <button class="btn btn-danger" ng-click="login()" ng-disabled="
+                            user.username.length === 0 || user.password.length === 0
+                            ||userlogin.username.$dirty && userlogin.username.$invalid
+                            || userlogin.password.$dirty && userlogin.password.$invalid">Login
+                                                </button>
+                                                <button class="btn btn-default" ng-click="resetData()">Reset</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

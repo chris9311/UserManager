@@ -1,0 +1,24 @@
+<div ng-controller="userlistController" class="panel panel-primary">
+    <div class="panel-heading">
+        <div class="panel-title">User List</div>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td>UserName</td>
+                <td>UserEmail</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+            </thead>
+            <tr ng-repeat="x in users">
+                <td><span ng-bind="x.username"></span></td>
+                <td><span ng-bind="x.useremail"></span></td>
+                <td><button class="btn btn-primary" ng-click="edit(x._id)">Edit</button>
+                <!--<td><a ui-sref="index.useredit({userid:x._id})">Edit User</a></td>-->
+                <td><button class="btn btn-danger" ng-click="delete(x._id)">Delete</button></td>
+            </tr>
+        </table>
+    </div>
+</div>

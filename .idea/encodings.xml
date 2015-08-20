@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/node_modules/bower/node_modules/bower-registry-client/node_modules/lru-cache/test/basic.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/node_modules/bower/node_modules/configstore/node_modules/js-yaml/lib/js-yaml/schema/json.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/node_modules/bower/node_modules/semver/Makefile" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/node_modules/bower/node_modules/semver/test/no-module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/node_modules/bower/node_modules/update-notifier/node_modules/semver-diff/node_modules/semver/test/no-module.js" charset="UTF-8" />
+  </component>
+</project>

@@ -1,0 +1,81 @@
+<div class="panel panel-info" ng-controller="UserRegister">
+    <div class="panel-heading">
+        <div class="panel-title">Add User</div>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-12">
+                <form class="form-horizontal" role="form"  method="post" name="register" novalidate>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            UserName:
+                        </label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="text" placeholder="this is your username" ng-model="user.username" name="username" required>
+                        </div>
+                        <div class="col-md-4">
+                            <span style="color:red" ng-show="register.username.$dirty && register.username.$invalid">
+                                <span ng-show="register.username.$error.required">Username is required.</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            Password:
+                        </label>
+                        <div class="col-md-6">
+                            <input class="form-control" placeholder="this is your password" type="password" ng-model="user.password" name="password"  required>
+                        </div>
+                        <div class="col-md-4">
+                             <span style="color:red" ng-show="register.password.$dirty && register.password.$invalid">
+                                 <span ng-show="register.password.$error.required">Password is required.</span>
+                             </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            Check Password:
+                        </label>
+                        <div class="col-md-6">
+                            <input class="form-control" placeholder="check your password" type="password" ng-model="user.cpassword" name="cpassword"  required>
+                        </div>
+                        <div class="col-md-4">
+                             <span style="color:red" ng-show="register.cpassword.$dirty && register.cpassword.$invalid ">
+                                 <span ng-show="register.cpassword.$error.required">Check Password is required.</span>
+                             </span>
+                            <span style="color:red" ng-show="user.cpassword != user.password">Inconsistent password,Pls check.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            UserEmail:
+                        </label>
+                        <div class="col-md-6">
+                            <input class="form-control" type="email" placeholder="this is your email" ng-model="user.useremail" name="useremail"  required>
+                        </div>
+                        <div class="col-md-4">
+                             <span style="color:red" ng-show="register.useremail.$dirty && register.useremail.$invalid">
+                                 <span ng-show="register.useremail.$error.required">Email is required.</span>
+                                 <span ng-show="register.useremail.$error.email">Invalid email address.</span>
+                             </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-5">
+                            <button class="btn btn-default" type="button" ng-click="check()"  ng-disabled="
+                            user.username.length === 0 || user.password.length === 0
+                            || user.cpassword.length === 0 || user.useremail.length === 0
+                            || register.username.$dirty && register.username.$invalid
+                            || register.password.$dirty && register.password.$invalid
+                            || register.cpassword.$dirty && register.cpassword.$invalid
+                            || user.cpassword != user.password
+                            || register.useremail.$dirty && register.useremail.$invalid">Submit</button>
+                            <button class="btn btn-default" ng-click="reset()">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
